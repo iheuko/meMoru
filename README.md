@@ -13,12 +13,12 @@
 
 ## memos テーブル
 
-| Column      | Type       | Options                         |
-| ----------- | ---------- | ------------------------------- |
-| memo_title  | string     |                                 |
-| memo        | string     | null: false                     |
-| frame_type  | string     | null: false                     |
-| user        | references | null: false, foreign_key: true  |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| memo_title     | string     |                                |
+| memo           | string     | null: false                    |
+| frame_type_id  | integer    | null: false                    |
+| user           | references | null: false, foreign_key: true |
 
 ### Association
 
