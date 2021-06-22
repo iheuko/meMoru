@@ -4,5 +4,11 @@ class Memo < ApplicationRecord
 
   belongs_to :user
 
-  
+  with_options presence: true do
+    validates :memo
+  end
+
+  with_options numericality: { only_integer: true } do
+    validates :frame_type_id
+  end
 end
