@@ -1,0 +1,24 @@
+<h2>Log in</h2>
+
+<%= form_with model: @user, url: new_user_session_path, class: 'session-main', local: true do |f| %>
+  <%=render 'shared/error_messages', model: f.object %>
+  
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
