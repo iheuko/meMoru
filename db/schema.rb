@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_201829) do
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "memo_title"
-    t.string "memo", null: false
+    t.text "memo", null: false
     t.integer "frame_type_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
