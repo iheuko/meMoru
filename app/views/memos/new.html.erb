@@ -1,5 +1,5 @@
 <p>メモ作成フォーム</p>
-<%= form_with model: @memo, url: new_memo_path, class: 'new-memo', local: true do |f| %>
+<%= form_with model: @memo, url: memos_path, class: 'new-memo', local: true do |f| %>
   <%=render 'shared/error_messages', model: f.object %>
 
   <div class="field">
@@ -13,7 +13,7 @@
   </div>
 
   <div class="field">
-    <%= f.collection_select(:fram_type_id, FrameType.all, :id, :name, {}, {class:"select-box", id:"frame-type"}) %>
+    <%= f.collection_select(:frame_type_id, FrameType.all, :id, :name, {}, {class:"select-box", id:"frame-type"}) %>
   </div>
 
   <div class="actions">
