@@ -1,5 +1,8 @@
 class MemosController < ApplicationController
   def index
+    if user_signed_in?
+      @memos = current_user.memos
+    end
   end
 
   def new
