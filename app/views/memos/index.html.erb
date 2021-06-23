@@ -1,9 +1,2 @@
  <%=render 'shared/header'%>
 <p>めもめも</p>
-<div class='main-menu'>
-  <ul class='memo-menu'>
-  <% if user_signed_in? %>
-    <li><%= link_to 'メモる', new_memo_path, class: "new-memo" %></li> 
-  <% end %>  
-  </ul>
-</div>
