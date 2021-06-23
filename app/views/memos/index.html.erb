@@ -7,3 +7,29 @@
   <% end %>  
   </ul>
 </div>
+
+<div class='memo-main'>
+  <ul class='item-lists'>
+    <% @memos.each do |memo| %>
+      <li class='list'>
+        <%= link_to memo_path(memo.id), method: :get do %>
+          <h3 class='memo-title'>
+            <%= memo.memo_title %>
+          </h3>
+          <div class='memo-massage'>
+            <%= memo.memo %>
+          </div>
+          <div class='memo-created-time'>
+            <%= memo.created_at %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+      
+    <% if @memos.empty? %>
+      <div class='memo-empty-message'>
+        <p>メモがないよ！</p>
+      </div>
+    <% end %>  
+  </ul>
+</div>
