@@ -2,8 +2,30 @@
 <p>めもめも</p>
 <div class='main-menu'>
   <ul class='memo-menu'>
-  <% if user_signed_in? %>
-    <li><%= link_to 'メモる', new_memo_path, class: "new-memo" %></li> 
-  <% end %>  
+    <% if user_signed_in? %>
+      <li><%= link_to 'メモる', new_memo_path, class: "new-memo" %></li>
+      <div class='memo-main'>
+        <% @memos.each do |memo| %>
+          <li class='list'>
+            <h3 class='memo-title'>
+              <%= memo.memo_title %>
+            </h3>
+            <div class='memo-massage'>
+              <%= memo.memo %>
+            </div>
+            <div class='memo-created-time'>
+              <%= memo.created_at %>
+            </div>
+          </li>
+        <% end %>  
+        <% if @memos.empty? %>
+          <div class='memo-empty-message'>
+            <p>メモがないよ！</p>
+          </div>
+        <% end %>  
+      </div>
+    <% else %>
+      <p>ログインしてね<p>
+    <% end %>  
   </ul>
 </div>
