@@ -3,7 +3,7 @@
 <div class='main-menu'>
   <ul class='memo-menu'>
     <% if user_signed_in? %>
-      <li><%= link_to 'メモる', new_memo_path, class: "new-memo" %></li>
+      <li><%= button_to 'メモる', { controller: 'memos', action: 'new' }, method: :get, class: 'button' %></li>
       <div class='memo-main'>
         <% @memos.each do |memo| %>
           <li class='list'>
