@@ -14,4 +14,12 @@
       </div>
     </div>
   </div>
+<% elsif @memo.frame_type_id == 3 %>
+  <div class= 'memo-sheet'>
+    <div class= 'maruhi-mark-img'>
+      <div class= 'memo-content'>
+        <%=render 'shared/memo' %>
+      </div>
+    </div>
+  </div>
 <%end%>

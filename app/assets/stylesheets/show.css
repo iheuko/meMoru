@@ -4,6 +4,12 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.maruhi-mark-img{
+  background-image: url('maruhi_mark.png');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .memo-content{
   width: 100vw;
