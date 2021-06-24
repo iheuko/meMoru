@@ -7,15 +7,17 @@
       <div class='memo-main'>
         <% @memos.each do |memo| %>
           <li class='list'>
-            <h3 class='memo-title'>
-              <%= memo.memo_title %>
-            </h3>
-            <div class='memo-massage'>
-              <%= memo.memo %>
-            </div>
-            <div class='memo-created-time'>
-              <%= memo.created_at %>
-            </div>
+            <%= link_to memo_path(memo.id), method: :get do %>
+              <h3 class='memo-title'>
+                <%= memo.memo_title %>
+              </h3>
+              <div class='memo-massage'>
+                <%= memo.memo %>
+              </div>
+              <div class='memo-created-time'>
+                <%= memo.created_at %>
+              </div>
+            <%end%>
           </li>
         <% end %>  
         <% if @memos.empty? %>
