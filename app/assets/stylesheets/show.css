@@ -1,0 +1,11 @@
+.memo-back-star-img{
+  background-image: url('star.png');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.memo-content{
+  width: 100vw;
+  height: 100vh;
+}
