@@ -2,7 +2,8 @@
 <p>メモ詳細</p>
 <div class='header-menu'>
   <ul class='user-menu'>
-    <li><%= button_to 'このメモを編集する', edit_memo_path(params[:id]), method: :get, class: 'button' %></li>  
+    <li><%= button_to 'このメモを編集する', edit_memo_path(params[:id]), method: :get, class: 'button' %></li>
+    <li><%= button_to 'このメモを削除', memo_path(params[:id]), method: :delete, data: {confirm: 'このメモを削除しますか？'},  class: 'button' %></li>  
   </ul>
 </div>
 <%if @memo.frame_type_id == 1 %>
