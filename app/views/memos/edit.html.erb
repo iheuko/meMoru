@@ -1,0 +1,22 @@
+<p>メモ編集フォーム</p>
+<%= form_with model: @memo, url: memo_path(@memo.id), class: 'edit-memo', local: true do |f| %>
+  <%=render 'shared/error_messages', model: f.object %>
+
+  <div class="field">
+    <%= f.label :memo_title %><br />
+    <%= f.text_area :memo_title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :memo %><br />
+    <%= f.text_area :memo %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select(:frame_type_id, FrameType.all, :id, :name, {}, {class:"select-box", id:"frame-type"}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "編集する" %>
+  </div>
+<%end%>

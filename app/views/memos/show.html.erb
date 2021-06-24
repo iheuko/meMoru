@@ -1,25 +1,24 @@
  <%=render 'shared/header'%>
 <p>メモ詳細</p>
+<div class='header-menu'>
+  <ul class='user-menu'>
+    <li><%= button_to 'このメモを編集する', edit_memo_path(params[:id]), method: :get, class: 'button' %></li>  
+  </ul>
+</div>
 <%if @memo.frame_type_id == 1 %>
 <div class= 'memo-sheet'>
-  <div class= 'memo-content'>
-    <%=render 'shared/memo' %>
-  </div>
+  <%=render 'shared/memo' %>
 </div>
 <% elsif @memo.frame_type_id == 2 %>
   <div class= 'memo-sheet'>
     <div class= 'memo-back-star-img'>
-      <div class= 'memo-content'>
-        <%=render 'shared/memo' %>
-      </div>
+      <%=render 'shared/memo' %>
     </div>
   </div>
 <% elsif @memo.frame_type_id == 3 %>
   <div class= 'memo-sheet'>
     <div class= 'maruhi-mark-img'>
-      <div class= 'memo-content'>
-        <%=render 'shared/memo' %>
-      </div>
+       <%=render 'shared/memo' %>
     </div>
   </div>
 <%end%>
