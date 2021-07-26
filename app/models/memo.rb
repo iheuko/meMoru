@@ -11,4 +11,8 @@ class Memo < ApplicationRecord
   with_options numericality: { only_integer: true } do
     validates :frame_type_id
   end
+
+  def self.search(keyword)
+    where(["memo_title like? OR memo like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 end
