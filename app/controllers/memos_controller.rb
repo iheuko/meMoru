@@ -42,6 +42,12 @@ class MemosController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @memos = Memo.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
 
   def memo_params
