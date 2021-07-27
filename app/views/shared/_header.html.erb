@@ -1,5 +1,8 @@
 <header class='top-page-header'>
   <div class='header-menu'>
+    <div class='home-ilnk'>
+      <%= link_to 'トップページへ', root_path %>
+    </div>
     <ul class='user-menu'>
     <% if user_signed_in? %>
       <li><%= button_to 'ログアウト', '/users/sign_out', method: :delete, class: 'button' %></li> 
