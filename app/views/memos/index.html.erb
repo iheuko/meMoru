@@ -12,7 +12,7 @@
       <li><%= button_to 'メモる', { controller: 'memos', action: 'new' }, method: :get, class: 'button' %></li>
       <div class='memo-main'>
         <% @memos.each do |memo| %>
-          <li class='list'>
+          <li class='memo-view'>
             <%= link_to memo_path(memo.id), method: :get do %>
               <h3 class='memo-title'>
                 <%= memo.memo_title %>
@@ -21,7 +21,7 @@
                 <%= memo.memo %>
               </div>
               <div class='memo-created-time'>
-                <%= memo.created_at %>
+                <%= l memo.created_at %>
               </div>
             <%end%>
           </li>
