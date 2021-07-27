@@ -1,4 +1,6 @@
 class MemosController < ApplicationController
+  
+  
   def index
     if user_signed_in?
       @memos = current_user.memos
@@ -19,25 +21,25 @@ class MemosController < ApplicationController
   end
 
   def show
-    @memo = Memo.find(params[:id])
+    @memo = memo_find
   end 
 
   def edit
-    @memo = Memo.find(params[:id])
+    @memo = memo_find
   end
 
   def update
-    memo = Memo.find(params[:id])
+    memo = memo_find
     if memo.update(memo_params)
       redirect_to memo_path(params[:id])
     else
-      @memo = Memo.find(params[:id])
+      @memo = memo_find
       render :edit
     end
   end
 
   def destroy
-    memo = Memo.find(params[:id])
+    memo = memo_find
     memo.destroy
     redirect_to root_path
   end
@@ -53,4 +55,9 @@ class MemosController < ApplicationController
   def memo_params
     params.require(:memo).permit(:memo_title, :memo, :frame_type_id).merge(user_id: current_user.id)
   end
+
+  def memo_find
+    Memo.find(params[:id])
+  end
+
 end
