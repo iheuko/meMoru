@@ -1,14 +1,14 @@
- <%=render 'shared/header'%>
- <div class="search-form">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword %>
-    <%= f.submit "検索" %>
-  <% end %>
-</div>
-<p>めもめも</p>
+<%=render 'shared/header'%>
 <div class='main-menu'>
   <ul class='memo-menu'>
     <% if user_signed_in? %>
+      <div class="search-form">
+      <%= form_with url: search_path, method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword %>
+        <%= f.submit "検索" %>
+      <% end %>
+      </div>
+      <p>ようこそ <%= current_user.name %> さん</p>
       <li><%= button_to 'メモる', { controller: 'memos', action: 'new' }, method: :get, class: 'button' %></li>
       <div class='memo-main'>
         <% @memos.each do |memo| %>
@@ -33,7 +33,7 @@
         <% end %>  
       </div>
     <% else %>
-      <p>ログインしてね<p>
+      <p>ログインか新規登録してね！<p>
     <% end %>  
   </ul>
 </div>
